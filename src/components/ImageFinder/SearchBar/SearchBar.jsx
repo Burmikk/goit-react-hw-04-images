@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BsSearch } from 'react-icons/bs';
 import scss from './searchBar.module.scss';
 
 const SearchBar = ({ onSubmit }) => {
   const [imageName, setImageName] = useState('');
+
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const handleInputChange = e => {
     const { value } = e.target;
@@ -28,6 +34,7 @@ const SearchBar = ({ onSubmit }) => {
           placeholder="Search images and photos"
           value={imageName}
           onChange={handleInputChange}
+          ref={inputRef}
         />
         <button className={scss.btn} type="submit">
           <BsSearch />
