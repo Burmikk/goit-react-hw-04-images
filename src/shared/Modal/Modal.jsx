@@ -7,7 +7,6 @@ const modalRoot = document.querySelector('#modal-root');
 
 const Modal = ({ close, children }) => {
   useEffect(() => {
-    console.log('Add listner');
     document.addEventListener('keydown', handleClose);
     return () => {
       document.removeEventListener('keydown', handleClose);
@@ -17,7 +16,6 @@ const Modal = ({ close, children }) => {
 
   const handleClose = ({ target, currentTarget, code }) => {
     if (target === currentTarget || code === 'Escape') {
-      console.log('I am still here');
       close();
     }
   };
