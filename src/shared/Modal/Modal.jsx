@@ -32,37 +32,7 @@ const Modal = ({ close, children }) => {
 
 Modal.propTypes = {
   close: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Modal;
-// class Modal extends Component {
-//   componentDidMount() {
-// document.addEventListener('keydown', this.handleClose);
-//   }
-
-//   componentWillUnmount() {
-// document.removeEventListener('keydown', this.handleClose);
-//   }
-
-// handleClose = ({ target, currentTarget, code }) => {
-//   if (target === currentTarget || code === 'Escape') {
-//     this.props.close();
-//   }
-// };
-
-//   render() {
-//     const { children } = this.props;
-// return createPortal(
-//   <div className={styles.overlay} onClick={this.handleClose}>
-//     <div className={styles.modal}>{children}</div>
-//   </div>,
-//   modalRoot
-// );
-//   }
-// }
-
-// Modal.propTypes = {
-//   close: PropTypes.func.isRequired,
-// };
-
-// export default Modal;
